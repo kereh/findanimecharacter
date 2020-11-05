@@ -1,0 +1,38 @@
+* {
+    font-family: "Nunito", sans-serif;
+    color: white;
+}
+
+body {
+    background-color: #1b262c;
+}
+
+.custom-card {
+    background-color: #233138;
+}
+
+.home-text {
+    padding-top: 20%;
+}
+
+.custom-nav {
+    background-color: #1b262c;
+}
+
+.trans {
+    background: transparent;
+    border: 1px solid #1b262c;
+    border-radius: 5px;
+    padding: 5px;
+    padding-right: 7px;
+    padding-left: 7px;
+}
+
+.trans::placeholder {
+    text-align: center;
+}
+
+.kecil {
+    width: 75px;
+    height: 75px;
+}
