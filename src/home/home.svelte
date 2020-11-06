@@ -6,7 +6,7 @@
     <Row>
         <Col sm="12 text-center home-text">
             <p>Application to make it easier to find anime characters.<br>Hope You Enjoy !</p>
-            <a class="btn btn-outline-success" href="/find">Get's Started</a>
+            <a href="/#/find" class="btn btn-outline-success">Get Started</a>
         </Col>
     </Row>
 </Container>

@@ -1,7 +1,7 @@
 <script>
 	// module
 	import { Collapse,Navbar,NavbarToggler,NavbarBrand,Nav,NavItem,NavLink, Container } from 'sveltestrap';
-	import { Router, Route, Link } from "svelte-routing";
+	import Router from "svelte-spa-router";
 
 	// component
 	import Home from "./home/home.svelte";
@@ -22,35 +22,28 @@
 </svelte:head>
 
 <main>
-	<Router>
-		<Navbar dark expand="md" class="sticky-top custom-nav">
-			<Container>
-				<NavbarBrand href="/">FACharacter</NavbarBrand>
-				<NavbarToggler on:click={() => (isOpen = !isOpen)} />
-				<Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
-				  <Nav class="ml-auto" navbar>
-					<NavItem>
-					  <NavLink>
-						  <Link to="/">Home</Link>
-						</NavLink>
-					</NavItem>
-					<NavItem>
-					  <NavLink>
-						  <Link to="find">Find Character</Link>
-						</NavLink>
-					</NavItem>
-					<NavItem>
-					  <NavLink>
-						  <Link to="about">About Me</Link>
-						</NavLink>
-					</NavItem>
-				  </Nav>
-				</Collapse>
-			</Container>
-		</Navbar>
-		<Route path="/" component={Home}></Route>
-		<Route path="/*" component={Home}></Route>
-		<Route path="find" component={Find}></Route>
-		<Route path="about" component={About}></Route>
-	</Router>
+	<Navbar dark expand="md" class="sticky-top custom-nav">
+		<Container>
+			<NavbarBrand href="/">FACharacter</NavbarBrand>
+			<NavbarToggler on:click={() => (isOpen = !isOpen)} />
+			<Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
+			  <Nav class="ml-auto" navbar>
+				<NavItem>
+				  <NavLink href="/#/">Home</NavLink>
+				</NavItem>
+				<NavItem>
+				  <NavLink href="/#/find">Find Anime Character</NavLink>
+				</NavItem>
+				<NavItem>
+				  <NavLink href="/#/about">About Me</NavLink>
+				</NavItem>
+			  </Nav>
+			</Collapse>
+		</Container>
+	</Navbar>
+	<Router routes={{
+		"/" : Home,
+		"/find" : Find,
+		"/about" : About
+	}} />
 </main>
